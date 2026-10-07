@@ -7,8 +7,8 @@
   --fg-dim:   oklch(72% 0.012 75);
   --fg-faint: oklch(52% 0.012 75);
   --border:   oklch(32% 0.01 60);
-  --accent:   oklch(72% 0.17 160);
-  --accent-dim: oklch(72% 0.17 160 / 0.35);
+  --accent:   #6cee54; /* business card green */
+  --accent-dim: rgb(108 238 84 / 0.35);
   --accent-ink: oklch(14% 0.006 55);
 
   --font-display: "Space Grotesk", Arial, sans-serif;

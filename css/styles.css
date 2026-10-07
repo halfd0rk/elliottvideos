@@ -7,8 +7,8 @@
   --fg-dim:   oklch(72% 0.012 75);
   --fg-faint: oklch(52% 0.012 75);
   --border:   oklch(32% 0.01 60);
-  --accent:   oklch(68% 0.21 35);
-  --accent-dim: oklch(68% 0.21 35 / 0.35);
+  --accent:   oklch(72% 0.17 160);
+  --accent-dim: oklch(72% 0.17 160 / 0.35);
   --accent-ink: oklch(14% 0.006 55);
 
   --font-display: "Space Grotesk", Arial, sans-serif;
@@ -500,6 +500,13 @@ body:not(.is-local) .card__slate{ display: none; }
   font-size: clamp(18px, 2.4vw, 26px);
   border-bottom: 1px solid var(--accent);
   padding-bottom: 4px;
+}
+
+.contact__phone{
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.4vw, 26px);
+  color: var(--fg-dim);
 }
 
 .contact__foot{

@@ -1,0 +1,5 @@
+.DS_Store
+Thumbs.db
+
+# raw reference/source art — not used by the site, not for the public repo
+assets/placeholders/

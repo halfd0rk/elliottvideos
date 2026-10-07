@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elliott Videos — Video Editing &amp; Production</title>
+<meta name="description" content="Video editing and production for creators, brands, and professionals: short-form, YouTube, AI-assisted visuals, and polished audio.">
+<link rel="canonical" href="https://www.elliottvideos.com/">
+<meta property="og:title" content="Elliott Videos — Video Editing &amp; Production">
+<meta property="og:description" content="Short-form, YouTube, and AI-assisted video, edited to keep people watching.">
+<meta property="og:url" content="https://www.elliottvideos.com/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.elliottvideos.com/assets/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23ff5a36'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="nav">
+  <a href="#top" class="nav__mark"><span class="nav__rec" aria-hidden="true"></span>Elliott Videos</a>
+  <div class="nav__links">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#contact" class="nav__cta">Book a project</a>
+    <button id="captionEditToggle" class="nav__edit-toggle" type="button" aria-pressed="false">Edit text</button>
+  </div>
+</nav>
+
+<p class="edit-hint">Editing locally — text edits save to this browser only. Copy final wording into <code>index.html</code> before you deploy.</p>
+
+<!-- ---------- Hero: muted background reel (assets/reel/hero.mp4) ---------- -->
+<header id="top" class="hero">
+  <video class="hero__reel js-media" src="assets/reel/hero.mp4" poster="assets/reel/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="hero__body">
+    <p class="hero__eyebrow">Video editing &amp; production — 2026</p>
+    <h1 class="hero__title">
+      <span>Cut.</span>
+      <span>Color.</span>
+      <span class="hero__title-accent"><em>Ship.</em></span>
+    </h1>
+    <p class="hero__sub" data-caption-key="hero-sub">Edits that keep people watching — short-form, YouTube, and AI-assisted video for creators, brands, and professionals.</p>
+    <div class="hero__actions">
+      <a class="btn btn--solid" href="#contact">Book a project</a>
+      <a class="btn" href="#work">See the work</a>
+    </div>
+  </div>
+  <a class="hero__scroll" href="#work">
+    <span>Scroll</span>
+    <svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 1v17M1 12l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</header>
+
+<main>
+
+  <!-- ---------- Work: video pieces. Sizes: --feature (full row, 16:9),
+       --half (half row, 16:9), --short (third of a row, 9:16) ---------- -->
+  <section id="work" class="work">
+    <div class="section__head">
+      <h2>Selected Work</h2>
+      <span class="section__count">01 — 06</span>
+    </div>
+
+    <div class="grid">
+
+      <article class="card card--video card--feature" data-index="01">
+        <div class="card__frame">
+          <video class="js-media card__video" src="assets/work/01.mp4" poster="assets/work/01-poster.jpg" playsinline preload="metadata"></video>
+          <button class="card__play" type="button" aria-label="Play">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l10 6-10 6V3z" fill="currentColor"/></svg>
+          </button>
+          <div class="card__info">
+            <span class="card__tag">Showreel</span>
+            <h3 class="card__title">2026 Reel</h3>
+          </div>
+          <span class="card__slate">assets/work/01.mp4</span>
+        </div>
+        <p class="card__caption" data-caption-key="work-01">A minute of highlights across client edits, shorts, and AI-assisted pieces.</p>
+      </article>
+
+      <article class="card card--video card--short" data-index="02">
+        <div class="card__frame">
+          <video class="js-media card__video" src="assets/work/02.mp4" poster="assets/work/02-poster.jpg" playsinline preload="metadata"></video>
+          <button class="card__play" type="button" aria-label="Play">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l10 6-10 6V3z" fill="currentColor"/></svg>
+          </button>
+          <div class="card__info">
+            <span class="card__tag">Short</span>
+            <h3 class="card__title">Untitled Short 02</h3>
+          </div>
+          <span class="card__slate">assets/work/02.mp4</span>
+        </div>
+        <p class="card__caption" data-caption-key="work-02">Client, platform, and what the edit did (hook, captions, pacing).</p>
+      </article>
+
+      <article class="card card--video card--short" data-index="03">
+        <div class="card__frame">
+          <video class="js-media card__video" src="assets/work/03.mp4" poster="assets/work/03-poster.jpg" playsinline preload="metadata"></video>
+          <button class="card__play" type="button" aria-label="Play">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l10 6-10 6V3z" fill="currentColor"/></svg>
+          </button>
+          <div class="card__info">
+            <span class="card__tag">Short</span>
+            <h3 class="card__title">Untitled Short 03</h3>
+          </div>
+          <span class="card__slate">assets/work/03.mp4</span>
+        </div>
+        <p class="card__caption" data-caption-key="work-03">Client, platform, and what the edit did (hook, captions, pacing).</p>
+      </article>
+
+      <article class="card card--video card--short" data-index="04">
+        <div class="card__frame">
+          <video class="js-media card__video" src="assets/work/04.mp4" poster="assets/work/04-poster.jpg" playsinline preload="metadata"></video>
+          <button class="card__play" type="button" aria-label="Play">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l10 6-10 6V3z" fill="currentColor"/></svg>
+          </button>
+          <div class="card__info">
+            <span class="card__tag">Short</span>
+            <h3 class="card__title">Untitled Short 04</h3>
+          </div>
+          <span class="card__slate">assets/work/04.mp4</span>
+        </div>
+        <p class="card__caption" data-caption-key="work-04">Client, platform, and what the edit did (hook, captions, pacing).</p>
+      </article>
+
+      <article class="card card--video card--half" data-index="05">
+        <div class="card__frame">
+          <video class="js-media card__video" src="assets/work/05.mp4" poster="assets/work/05-poster.jpg" playsinline preload="metadata"></video>
+          <button class="card__play" type="button" aria-label="Play">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l10 6-10 6V3z" fill="currentColor"/></svg>
+          </button>
+          <div class="card__info">
+            <span class="card__tag">YouTube</span>
+            <h3 class="card__title">Untitled Edit 05</h3>
+          </div>
+          <span class="card__slate">assets/work/05.mp4</span>
+        </div>
+        <p class="card__caption" data-caption-key="work-05">Long-form edit: what it was, who it was for, and the result.</p>
+      </article>
+
+      <article class="card card--video card--half" data-index="06">
+        <div class="card__frame">
+          <video class="js-media card__video" src="assets/work/06.mp4" poster="assets/work/06-poster.jpg" playsinline preload="metadata"></video>
+          <button class="card__play" type="button" aria-label="Play">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l10 6-10 6V3z" fill="currentColor"/></svg>
+          </button>
+          <div class="card__info">
+            <span class="card__tag">AI-assisted</span>
+            <h3 class="card__title">Untitled Edit 06</h3>
+          </div>
+          <span class="card__slate">assets/work/06.mp4</span>
+        </div>
+        <p class="card__caption" data-caption-key="work-06">AI-generated shots or avatar work, cut into a finished piece.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ---------- Services: what you can hire for ---------- -->
+  <section id="services" class="services">
+    <div class="section__head">
+      <h2>Services</h2>
+      <span class="section__count">01 — 04</span>
+    </div>
+
+    <div class="services__grid">
+
+      <article class="service">
+        <span class="service__num">01</span>
+        <h3 class="service__title">Short-form editing</h3>
+        <p class="service__body" data-caption-key="svc-01-body">Shorts, Reels, and TikToks cut for retention: strong hooks, tight pacing, animated captions, and sound design.</p>
+        <p class="service__price" data-caption-key="svc-01-price">From $— per video</p>
+      </article>
+
+      <article class="service">
+        <span class="service__num">02</span>
+        <h3 class="service__title">YouTube long-form</h3>
+        <p class="service__body" data-caption-key="svc-02-body">Full edits from raw footage: story structure, b-roll, color, graphics, and a clean mix, ready to upload.</p>
+        <p class="service__price" data-caption-key="svc-02-price">From $— per video</p>
+      </article>
+
+      <article class="service">
+        <span class="service__num">03</span>
+        <h3 class="service__title">AI-assisted video</h3>
+        <p class="service__body" data-caption-key="svc-03-body">Generated b-roll, visuals, and AI-avatar presenters for professionals who need steady content without a shoot.</p>
+        <p class="service__price" data-caption-key="svc-03-price">Quoted per project</p>
+      </article>
+
+      <article class="service">
+        <span class="service__num">04</span>
+        <h3 class="service__title">Audio cleanup</h3>
+        <p class="service__body" data-caption-key="svc-04-body">Noise reduction, leveling, and loudness for platform specs, so voices sound clear on phones and headphones.</p>
+        <p class="service__price" data-caption-key="svc-04-price">Included with edits, or from $—</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ---------- Process: how a project runs ---------- -->
+  <section id="process" class="process">
+    <div class="section__head">
+      <h2>How it works</h2>
+      <span class="section__count">01 — 04</span>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <span class="step__num">01</span>
+        <h3 class="step__title">Brief</h3>
+        <p class="step__body" data-caption-key="step-01">A quick call or message: goals, audience, platform, and references you like.</p>
+      </li>
+      <li class="step">
+        <span class="step__num">02</span>
+        <h3 class="step__title">First cut</h3>
+        <p class="step__body" data-caption-key="step-02">Send your footage. You get a first cut with captions, music, and graphics in place.</p>
+      </li>
+      <li class="step">
+        <span class="step__num">03</span>
+        <h3 class="step__title">Revisions</h3>
+        <p class="step__body" data-caption-key="step-03">Leave notes on timestamps. Revision rounds are included so it lands right.</p>
+      </li>
+      <li class="step">
+        <span class="step__num">04</span>
+        <h3 class="step__title">Delivery</h3>
+        <p class="step__body" data-caption-key="step-04">Final exports sized for every platform, plus titles and thumbnails on request.</p>
+      </li>
+    </ol>
+  </section>
+
+</main>
+
+<footer id="contact" class="contact">
+  <p class="hero__eyebrow">Now booking</p>
+  <h2 class="contact__title">Let's make<br>something.</h2>
+  <p class="contact__sub" data-caption-key="contact-sub">Tell me what you're making, where it's going, and when you need it. I'll reply within a day.</p>
+  <a class="contact__email" href="mailto:halfdorkstudios@gmail.com">halfdorkstudios@gmail.com</a>
+  <div class="contact__foot">
+    <span>Elliott Videos © 2026</span>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

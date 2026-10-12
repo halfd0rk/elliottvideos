@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=2">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%236cee54'/%3E%3C/svg%3E">
 </head>
 <body>
@@ -36,7 +36,7 @@
 
 <!-- ---------- Hero: muted background reel (assets/reel/hero.mp4) ---------- -->
 <header id="top" class="hero">
-  <video class="hero__reel js-media" src="assets/reel/hero.mp4" poster="assets/reel/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <video class="hero__reel js-media" src="assets/reel/hero.mp4?v=2" poster="assets/reel/hero-poster.jpg?v=2" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
   <div class="hero__shade" aria-hidden="true"></div>
   <div class="hero__body">
     <p class="hero__eyebrow">Video production &amp; marketing</p>
@@ -66,24 +66,24 @@
   <section id="work" class="work">
     <div class="section__head">
       <h2>Selected Work</h2>
-      <span class="section__count">01 — 07</span>
+      <span class="section__count">01 — 08</span>
     </div>
 
     <div class="grid">
 
       <article class="card card--video card--feature" data-index="01">
         <div class="card__frame">
-          <video class="js-media card__video" src="assets/work/01.mp4" poster="assets/work/01-poster.jpg" playsinline preload="metadata"></video>
+          <video class="js-media card__video" src="assets/work/01.mp4?v=2" poster="assets/work/01-poster.jpg?v=2" playsinline preload="metadata"></video>
           <button class="card__play" type="button" aria-label="Play">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l10 6-10 6V3z" fill="currentColor"/></svg>
           </button>
           <div class="card__info">
-            <span class="card__tag">AI-assisted</span>
-            <h3 class="card__title">Tandem — Test Footage</h3>
+            <span class="card__tag">Showreel</span>
+            <h3 class="card__title">2026 Reel</h3>
           </div>
           <span class="card__slate">assets/work/01.mp4</span>
         </div>
-        <p class="card__caption" data-caption-key="work-01">Tandem, an original mech short in progress: AI-generated shots, character and motion tests, cut with sound design.</p>
+        <p class="card__caption" data-caption-key="work-01">Aerial highlights from recent drone shoots: land development, lakeside neighborhoods, and wooded acreage, color-graded and cut to a minute.</p>
       </article>
 
       <article class="card card--video card--short" data-index="02">
@@ -174,6 +174,21 @@
           <span class="card__slate">assets/work/07.mp4</span>
         </div>
         <p class="card__caption" data-caption-key="work-07">Glenn Moore, Realtor: what buyers should look for on a showing, cut for Shorts and Reels.</p>
+      </article>
+
+      <article class="card card--video card--feature" data-index="08">
+        <div class="card__frame">
+          <video class="js-media card__video" src="assets/work/08.mp4?v=2" poster="assets/work/08-poster.jpg?v=2" playsinline preload="metadata"></video>
+          <button class="card__play" type="button" aria-label="Play">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l10 6-10 6V3z" fill="currentColor"/></svg>
+          </button>
+          <div class="card__info">
+            <span class="card__tag">AI-assisted</span>
+            <h3 class="card__title">Tandem — Test Footage</h3>
+          </div>
+          <span class="card__slate">assets/work/08.mp4</span>
+        </div>
+        <p class="card__caption" data-caption-key="work-08">Tandem, an original mech short in progress: AI-generated shots, character and motion tests, cut with sound design.</p>
       </article>
 
     </div>

@@ -3,3 +3,8 @@ Thumbs.db
 
 # raw reference/source art — not used by the site, not for the public repo
 assets/placeholders/
+
+# local working folders (not for the site)
+_backup_*/
+_mock_thumbs/
+PREVIEW.bat

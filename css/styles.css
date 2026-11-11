@@ -569,3 +569,63 @@ body:not(.is-local) .card__slate{ display: none; }
   .steps{ grid-template-columns: 1fr; }
   .edit-hint{ left: 16px; right: 16px; max-width: none; }
 }
+
+/* ---------- 2026-11 layout additions: Featured section, badges, coming-soon cards ---------- */
+.work + .work{ padding-top: 100px; }
+
+/* the first subhead sits right under the section head, so no top rule */
+.grid__subhead--first{ margin-top: 0; padding-top: 0; border-top: 0; }
+
+/* "New" / "Coming soon" pill in the top-left of a card */
+.card__badge{
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  z-index: 2;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.card__badge--soon{ background: var(--fg); color: var(--accent-ink); }
+.card__badge--dark{ background: var(--accent-ink); color: var(--fg); }
+.card.is-playing .card__badge{ opacity: 0; }
+
+/* coming-soon cards: still image, title always visible, no play */
+.card--soon .card__frame{ cursor: default; }
+.card--soon .card__info{ opacity: 1; transform: none; flex-direction: column; align-items: flex-start; gap: 4px; }
+.card__frame--light{ background: #f4efe4; }
+.card__img--contain{ object-fit: contain; padding: 6% 0 14%; }
+.card__frame--text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 32px 36px 72px;
+  background: linear-gradient(160deg, oklch(26% 0.02 70), oklch(18% 0.01 60));
+}
+.card__kicker{
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+.card__headline{
+  max-width: 18ch;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.05;
+  color: oklch(90% 0.04 85);
+}
+
+/* six services: three per row on desktop */
+.services__grid{ grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1100px){ .services__grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px){ .services__grid{ grid-template-columns: 1fr; } .card__frame--text{ padding: 24px 20px 64px; } }

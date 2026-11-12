@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=5">
+<link rel="stylesheet" href="css/styles.css?v=6">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%236cee54'/%3E%3C/svg%3E">
 </head>
 <body>
@@ -524,16 +524,76 @@
 </main>
 
 <footer id="contact" class="contact">
-  <p class="hero__eyebrow">Now booking</p>
-  <h2 class="contact__title">Let's make<br>something.</h2>
-  <p class="contact__sub" data-caption-key="contact-sub">Tell me what you're making, where it's going, and when you need it. I'll reply within a day.</p>
-  <a class="contact__email" href="mailto:elliottlacour@gmail.com">elliottlacour@gmail.com</a>
-  <a class="contact__phone" href="tel:+13868522537">386-852-2537</a>
+  <div class="contact__grid">
+    <div class="contact__intro">
+      <p class="hero__eyebrow">Now booking</p>
+      <h2 class="contact__title">Let's make<br>something.</h2>
+      <p class="contact__sub" data-caption-key="contact-sub">Tell me what you're making, where it's going, and when you need it. I'll reply within a day.</p>
+      <a class="contact__email" href="mailto:elliottlacour@gmail.com">elliottlacour@gmail.com</a>
+      <a class="contact__phone" href="tel:+13868522537">386-852-2537</a>
+    </div>
+
+    <!-- Contact form: sends to the email below through FormSubmit (formsubmit.co).
+         The first submission triggers a one-time activation email to that address. -->
+    <form class="contact-form" id="contactForm" action="https://formsubmit.co/elliottlacour@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New project inquiry from elliottvideos.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://www.elliottvideos.com/#contact">
+      <input type="text" name="_honey" class="contact-form__trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="contact-form__row">
+        <label class="field">
+          <span class="field__label">Name</span>
+          <input class="field__input" type="text" name="name" autocomplete="name" required>
+        </label>
+        <label class="field">
+          <span class="field__label">Email</span>
+          <input class="field__input" type="email" name="email" autocomplete="email" required>
+        </label>
+      </div>
+
+      <div class="contact-form__row">
+        <label class="field">
+          <span class="field__label">Phone <em>(optional)</em></span>
+          <input class="field__input" type="tel" name="phone" autocomplete="tel">
+        </label>
+        <label class="field">
+          <span class="field__label">What do you need?</span>
+          <select class="field__input" name="project_type" required>
+            <option value="" disabled selected>Choose one</option>
+            <option>Property flyover</option>
+            <option>Event coverage</option>
+            <option>Short-form / social</option>
+            <option>YouTube long-form</option>
+            <option>AI avatar / AI-assisted video</option>
+            <option>Audio cleanup</option>
+            <option>Something else</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="field">
+        <span class="field__label">When do you need it? <em>(optional)</em></span>
+        <input class="field__input" type="text" name="timeline" placeholder="e.g. by Dec 15, or next month">
+      </label>
+
+      <label class="field">
+        <span class="field__label">Tell me about the project</span>
+        <textarea class="field__input field__input--area" name="message" rows="5" required placeholder="What it's for, where it'll be posted, and any links or references you like."></textarea>
+      </label>
+
+      <div class="contact-form__actions">
+        <button class="btn btn--solid contact-form__submit" type="submit">Send message</button>
+        <p class="contact-form__status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+
   <div class="contact__foot">
     <span>Elliott Lacour · Elliott Videos © 2026</span>
   </div>
 </footer>
 
-<script src="js/script.js"></script>
+<script src="js/script.js?v=2"></script>
 </body>
 </html>

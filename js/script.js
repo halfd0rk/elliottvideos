@@ -90,3 +90,36 @@ editToggle.addEventListener("click", () => {
   editToggle.textContent = editing ? "Done editing" : "Edit text";
   editables.forEach((el) => el.setAttribute("contenteditable", editing ? "true" : "false"));
 });
+
+/* ---------- Contact form: send without leaving the page (falls back to a normal POST) ---------- */
+const contactForm = document.getElementById("contactForm");
+if (contactForm && window.fetch) {
+  const status = contactForm.querySelector(".contact-form__status");
+  const submit = contactForm.querySelector(".contact-form__submit");
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (contactForm.elements._honey.value) return; // bot trap
+    submit.disabled = true;
+    submit.textContent = "Sending…";
+    status.className = "contact-form__status";
+    status.textContent = "";
+    try {
+      const res = await fetch(contactForm.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(contactForm),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || String(data.success) === "false") throw new Error(data.message || "Send failed");
+      contactForm.reset();
+      status.classList.add("is-ok");
+      status.textContent = "Thanks! Your message is on its way. I'll reply within a day.";
+    } catch (err) {
+      status.classList.add("is-error");
+      status.innerHTML = 'Something went wrong. Please email <a href="mailto:elliottlacour@gmail.com">elliottlacour@gmail.com</a> instead.';
+    } finally {
+      submit.disabled = false;
+      submit.textContent = "Send message";
+    }
+  });
+}

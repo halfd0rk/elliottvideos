@@ -110,13 +110,22 @@ if (contactForm && window.fetch) {
         body: new FormData(contactForm),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || String(data.success) === "false") throw new Error(data.message || "Send failed");
-      contactForm.reset();
-      status.classList.add("is-ok");
-      status.textContent = "Thanks! Your message is on its way. I'll reply within a day.";
+      if (res.ok && String(data.success) !== "false") {
+        contactForm.reset();
+        status.classList.add("is-ok");
+        status.textContent = "Thanks! Your message is on its way. I'll reply within a day.";
+        return;
+      }
+      if (/activat/i.test(data.message || "")) {
+        status.classList.add("is-error");
+        status.textContent = "This form is waiting to be activated. Please try again shortly, or email elliottlacour@gmail.com.";
+        return;
+      }
+      throw new Error(data.message || "Send failed");
     } catch (err) {
-      status.classList.add("is-error");
-      status.innerHTML = 'Something went wrong. Please email <a href="mailto:elliottlacour@gmail.com">elliottlacour@gmail.com</a> instead.';
+      // AJAX failed (blocked request, network, etc.): fall back to a normal form post.
+      HTMLFormElement.prototype.submit.call(contactForm);
+      return;
     } finally {
       submit.disabled = false;
       submit.textContent = "Send message";

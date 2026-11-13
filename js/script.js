@@ -59,7 +59,71 @@ videoCards.forEach((card) => {
     if (video.paused) video.play();
     else video.pause();
   });
+
+  addScrubBar(card, frame, video);
 });
+
+/* ---------- Scrub bar: play/pause, seek, time (appears once a video has started) ---------- */
+function formatTime(s) {
+  if (!isFinite(s) || s < 0) s = 0;
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${String(sec).padStart(2, "0")}`;
+}
+
+function addScrubBar(card, frame, video) {
+  const bar = document.createElement("div");
+  bar.className = "card__controls";
+  bar.innerHTML = `
+    <button class="card__ctrl-play" type="button" aria-label="Play">${PLAY_ICON(14)}</button>
+    <input class="card__seek" type="range" min="0" max="1000" step="1" value="0" aria-label="Seek">
+    <span class="card__time"><span class="card__time-now">0:00</span> / <span class="card__time-total">0:00</span></span>`;
+  frame.appendChild(bar);
+
+  const playBtn = bar.querySelector(".card__ctrl-play");
+  const seek = bar.querySelector(".card__seek");
+  const now = bar.querySelector(".card__time-now");
+  const total = bar.querySelector(".card__time-total");
+  let dragging = false;
+
+  // Clicks on the bar shouldn't also toggle play via the frame
+  bar.addEventListener("click", (e) => e.stopPropagation());
+
+  playBtn.addEventListener("click", () => (video.paused ? video.play() : video.pause()));
+
+  const paint = () => {
+    const d = video.duration;
+    const p = d ? video.currentTime / d : 0;
+    if (!dragging) seek.value = Math.round(p * 1000);
+    seek.style.setProperty("--p", `${(seek.value / 10).toFixed(1)}%`);
+    now.textContent = formatTime(video.currentTime);
+    total.textContent = formatTime(d);
+  };
+
+  const seekTo = () => {
+    if (video.duration) video.currentTime = (seek.value / 1000) * video.duration;
+    paint();
+  };
+  seek.addEventListener("input", () => { dragging = true; seekTo(); });
+  seek.addEventListener("change", () => { dragging = false; seekTo(); });
+  seek.addEventListener("pointerup", () => { dragging = false; });
+
+  video.addEventListener("loadedmetadata", paint);
+  video.addEventListener("timeupdate", paint);
+  video.addEventListener("seeked", paint);
+  video.addEventListener("play", () => {
+    card.classList.add("is-started");
+    playBtn.innerHTML = PAUSE_ICON(14);
+    playBtn.setAttribute("aria-label", "Pause");
+  });
+  ["pause", "ended"].forEach((evt) =>
+    video.addEventListener(evt, () => {
+      playBtn.innerHTML = PLAY_ICON(14);
+      playBtn.setAttribute("aria-label", "Play");
+    })
+  );
+  paint();
+}
 
 /* ---------- Editable text: saved to this browser only (local authoring) ---------- */
 const editables = document.querySelectorAll("[data-caption-key]");

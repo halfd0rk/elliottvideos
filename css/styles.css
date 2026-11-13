@@ -332,9 +332,13 @@ body.is-editing .edit-hint{ display: block; }
   pointer-events: none;
 }
 
+/* Description sits above its video. Cards in a row bottom-align so the
+   videos line up even when descriptions differ in length. */
+.card:has(> .card__caption){ display: flex; flex-direction: column; justify-content: flex-end; }
 .card__caption{
-  margin: 10px 2px 0;
-  padding-bottom: 4px;
+  order: -1;
+  margin: 0 2px 10px;
+  padding-bottom: 0;
   font-size: 13px;
   line-height: 1.5;
   color: var(--fg-dim);

@@ -776,3 +776,28 @@ select.field__input option{ background: var(--bg-elev); color: var(--fg); }
   .contact-form{ padding: 20px; }
   .contact-form__row{ grid-template-columns: 1fr; }
 }
+
+/* Share row under a video: open the standalone player, copy its link or iframe code */
+.card__share{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 10px 2px 0;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+.card__share a,
+.card__share button{
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--fg-dim);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--fg-faint);
+  cursor: pointer;
+}
+.card__share a:hover,
+.card__share button:hover,
+.card__share button.is-copied{ color: var(--accent); text-decoration-color: var(--accent); }

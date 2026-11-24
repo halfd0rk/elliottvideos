@@ -196,3 +196,25 @@ if (contactForm && window.fetch) {
     }
   });
 }
+
+/* ---------- Share row: copy a video's standalone link or iframe embed code ---------- */
+const SITE = "https://www.elliottvideos.com/";
+document.querySelectorAll(".card__share").forEach((row) => {
+  const url = SITE + row.dataset.embed;
+  row.querySelectorAll(".js-copy").forEach((btn) => {
+    const label = btn.textContent;
+    btn.addEventListener("click", async () => {
+      const text = btn.dataset.copy === "embed"
+        ? `<iframe src="${url}" width="640" height="360" style="aspect-ratio:16/9;width:100%;height:auto;border:0" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Elliott Videos"></iframe>`
+        : url;
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = "Copied";
+      } catch {
+        window.prompt("Copy this:", text);
+      }
+      btn.classList.add("is-copied");
+      setTimeout(() => { btn.textContent = label; btn.classList.remove("is-copied"); }, 1600);
+    });
+  });
+});
